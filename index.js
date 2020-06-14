@@ -1,10 +1,14 @@
 const express = require("express")
+const timeout = require("connect-timeout")
 const fs = require("fs")
 const { type } = require("os")
+
 const port = process.env.PORT || 80
 
 const app = express()
 var record = "";
+
+app.use(timeout("5s"))
 
 app.get("/", (req, res) => {
     console.log(`${JSON.stringify(req.query)}`)
