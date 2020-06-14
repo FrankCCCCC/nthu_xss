@@ -19,7 +19,7 @@ app.get("/", (req, res) => {
     record = record + `${JSON.stringify(req.query)}\n`
     
     // res.status(200)
-    res.send("Ok")
+    res.send(Math.random().toString())
 })
 
 app.get("/logs", (req, res) => {
